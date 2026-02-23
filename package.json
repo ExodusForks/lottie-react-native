@@ -6,7 +6,7 @@
     "node": "18"
   },
   "scripts": {
-    "setup": "yarn workspace lottie-react-native build",
+    "setup": "yarn workspace @exodus/lottie-react-native build",
     "release": "release-it",
     "fabric:android": "yarn workspace example fabric:android",
     "fabric:build:android": "yarn workspace example ci:fabric:android",
@@ -17,7 +17,7 @@
     "paper:build:ios": "yarn workspace example ci:paper:ios",
     "run:bundler": "yarn workspace example start",
     "run:web": "yarn workspace example web",
-    "lint:swift": "yarn workspace lottie-react-native lint:swift",
+    "lint:swift": "yarn workspace @exodus/lottie-react-native lint:swift",
     "tsc": "yarn workspace example tsc",
     "docs:clean": "rimraf _book",
     "docs:prepare": "gitbook install",
@@ -59,7 +59,7 @@
         "workspaces": [
           "packages/*"
         ],
-        "publishCommand": "yarn workspace lottie-react-native release"
+        "publishCommand": "yarn workspace @exodus/lottie-react-native release"
       },
       "@release-it/conventional-changelog": {
         "preset": "angular",

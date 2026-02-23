@@ -50,7 +50,7 @@
   "peerDependenciesMeta": {
     "@lottiefiles/dotlottie-react": {
       "optional": true
-    },
+    }
   },
   "devDependencies": {
     "@lottiefiles/dotlottie-react": "^0.13.5",
