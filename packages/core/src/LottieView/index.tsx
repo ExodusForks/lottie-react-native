@@ -26,7 +26,6 @@ const defaultProps: Props = {
   enableMergePathsAndroidForKitKatAndAbove: false,
   enableSafeModeAndroid: false,
   cacheComposition: true,
-  useNativeLooping: false,
   resizeMode: 'contain',
   colorFilters: [],
   textFiltersAndroid: [],

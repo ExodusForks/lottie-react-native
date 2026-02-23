@@ -23,10 +23,6 @@
     "visionos": [
       "dist/assets",
       "dist/main.visionos.jsbundle"
-    ],
-    "windows": [
-      "dist/assets",
-      "dist/main.windows.bundle"
     ]
   }
 }

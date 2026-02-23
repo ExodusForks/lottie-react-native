@@ -33,7 +33,3 @@ ios/build
 .prettierignore
 .prettierrc
 .tsconfig.json
-
-src/windows/cppwinrt/bin
-src/windows/cppwinrt/obj
-src/windows/cppwinrt/packages

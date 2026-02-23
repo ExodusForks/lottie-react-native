@@ -6,7 +6,6 @@ module.exports = {
         componentDescriptors: ['LottieAnimationViewComponentDescriptor'],
       },
       macos: null,
-      windows: null,
     },
   },
 };

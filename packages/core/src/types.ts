@@ -50,7 +50,7 @@ export interface LottieViewProps {
    * represents the normalized progress of the animation. If you update this prop, the
    * animation will correspondingly update to the frame at that progress value. This
    * prop is not required if you are using the imperative API.
-   * @platform ios, android, windows
+   * @platform ios, android
    */
   progress?: number;
 
@@ -63,7 +63,7 @@ export interface LottieViewProps {
   /**
    * The duration of the animation in ms. Takes precedence over speed when set.
    * This only works when source is an actual JS object of an animation.
-   * @platform ios, android, windows
+   * @platform ios, android
    */
   duration?: number;
 
@@ -77,7 +77,7 @@ export interface LottieViewProps {
    * http://facebook.github.io/react-native/releases/0.39/docs/view.html#style
    *
    * **CAVEAT: border styling is not supported.**
-   * @platform ios, android, windows
+   * @platform ios, android
    */
   style?: StyleProp<ViewStyle>;
 
@@ -129,7 +129,7 @@ export interface LottieViewProps {
   /**
    * A callback function which will be called when the animation loops.
    *
-   * @platform windows, web
+   * @platform web
    */
   onAnimationLoop?: () => void;
 
@@ -203,16 +203,6 @@ export interface LottieViewProps {
    * @platform ios
    */
   textFiltersIOS?: Array<TextFilterIOS>;
-
-  // Windows Props
-
-  /**
-   * A boolean flag to enable use of platform-level looping on Windows. This improves loop smoothness,
-   * but onAnimationLoop will not fire and changing the loop prop will restart playback.
-   *
-   * @platform windows
-   */
-  useNativeLooping?: boolean;
 
   // Web Props
 
