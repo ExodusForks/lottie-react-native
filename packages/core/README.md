@@ -30,20 +30,6 @@ Go to your ios folder and run:
 pod install
 ```
 
-### Web
-
-- Install `lottie-react-native` (latest):
-
-```
-yarn add lottie-react-native
-```
-
-- Add dependencies for web players:
-
-```
-yarn add @lottiefiles/dotlottie-react
-```
-
 ## Usage
 
 Lottie can be used in a declarative way:

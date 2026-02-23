@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react';
 import type { StyleProp, ViewStyle, LayoutChangeEvent } from 'react-native';
 
 /**
@@ -82,12 +81,6 @@ export interface LottieViewProps {
   style?: StyleProp<ViewStyle>;
 
   /**
-   * Style attributes for the web.
-   * @platform web
-   */
-  webStyle?: CSSProperties;
-
-  /**
    * Determines how to resize the animated view when the frame doesn't match the raw image
    * dimensions.
    *
@@ -110,13 +103,13 @@ export interface LottieViewProps {
   /**
    * A callback function which will be called when animation is finished. Note that this
    * callback will be called only when `loop` is set to false.
-   * @platform ios, android, web
+   * @platform ios, android
    */
   onAnimationFinish?: (isCancelled: boolean) => void;
 
   /**
    * A callback function which will be called when animation is failed to load.
-   * @platform ios, android, web
+   * @platform ios, android
    */
   onAnimationFailure?: (error: string) => void;
 
@@ -125,13 +118,6 @@ export interface LottieViewProps {
    * @platform ios, android
    */
   onAnimationLoaded?: () => void;
-
-  /**
-   * A callback function which will be called when the animation loops.
-   *
-   * @platform web
-   */
-  onAnimationLoop?: () => void;
 
   /**
    * A callback function which will be called when the view has been laid out.
@@ -203,18 +189,4 @@ export interface LottieViewProps {
    * @platform ios
    */
   textFiltersIOS?: Array<TextFilterIOS>;
-
-  // Web Props
-
-  /**
-   * A boolean flag to enable hover interactions. Whether to play on mouse hover. Defaults to false.
-   * @platform web
-   */
-  hover?: boolean;
-
-  /**
-   * Direction of the animation. Defaults to 1.
-   * @platform web
-   */
-  direction?: 1 | -1;
 }

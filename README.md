@@ -30,20 +30,6 @@ Go to your ios folder and run:
 pod install
 ```
 
-### Web
-
-- Install `lottie-react-native` (latest):
-
-```
-yarn add lottie-react-native
-```
-
-- Add dependencies for web players:
-
-```
-yarn add @lottiefiles/dotlottie-react
-```
-
 ## Privacy (iOS)
 
 Lottie iOS and Lottie React Native do not collect any data. We provide this notice to help you fill out [App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/). Both libraries provide privacy manifests ([Lottie iOS's privacy manifest](https://github.com/airbnb/lottie-ios/blob/master/Sources/PrivacyInfo.xcprivacy), [Lottie React Native's privacy manifest](https://github.com/lottie-react-native/lottie-react-native/blob/master/packages/core/ios/PrivacyInfo.xcprivacy)) which can be included in your app and are available as bundle resources within the libraries by default.
