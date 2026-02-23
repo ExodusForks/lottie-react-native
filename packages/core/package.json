@@ -1,6 +1,6 @@
 {
   "name": "@exodus/lottie-react-native",
-  "version": "7.3.6-exodus.0",
+  "version": "7.3.6-exodus.1",
   "description": "React Native bindings for Lottie",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
