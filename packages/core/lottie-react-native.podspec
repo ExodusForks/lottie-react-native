@@ -3,7 +3,7 @@ require 'json'
 package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 
 Pod::Spec.new do |s|
-  s.name                    = package["name"]
+  s.name                    = "lottie-react-native"
   s.version                 = package['version']
   s.summary                 = package["description"]
   s.license                 = package["license"]
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target  = '13.0'
   s.visionos.deployment_target = '1.0'
 
-  s.source                  = { :git => "https://github.com/lottie-react-native/lottie-react-native.git", :tag => "v#{s.version}" }
+  s.source                  = { :git => "https://github.com/ExodusMovement/lottie-react-native.git", :tag => "v#{s.version}" }
   s.source_files            = "ios/**/*.{h,m,mm,swift}"
   s.resource_bundles = {
     'Lottie_React_Native_Privacy' => ['ios/PrivacyInfo.xcprivacy'],
