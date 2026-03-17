@@ -36,10 +36,7 @@ type TextFilterAndroidStruct = Readonly<{
 export interface NativeProps extends ViewProps {
   resizeMode?: string;
   renderMode?: string;
-  sourceName?: string;
   sourceJson?: string;
-  sourceURL?: string;
-  sourceDotLottieURI?: string;
   imageAssetsFolder?: string;
   progress?: Float;
   speed?: Double;

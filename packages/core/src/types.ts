@@ -37,12 +37,10 @@ type TextFilterAndroid = {
  */
 export interface LottieViewProps {
   /**
-   * The source of animation. Can be referenced as a local asset by a string, or remotely
-   * with an object with a `uri` property, or it can be an actual JS object of an
-   * animation, obtained (for example) with something like
-   * `require('../path/to/animation.json')`
+   * The source of animation. Must be a JS object of a Lottie animation,
+   * obtained (for example) with `require('../path/to/animation.json')`.
    */
-  source: string | AnimationObject | { uri: string };
+  source: AnimationObject;
 
   /**
    * A number between 0 and 1, or an `Animated` number between 0 and 1. This number

@@ -68,18 +68,6 @@ using namespace facebook::react;
     if(oldLottieProps.sourceJson != newLottieProps.sourceJson) {
         [_view setSourceJson:RCTNSStringFromString(newLottieProps.sourceJson.c_str())];
     }
-
-    if(oldLottieProps.sourceDotLottieURI != newLottieProps.sourceDotLottieURI) {
-        [_view setSourceDotLottieURI:RCTNSStringFromString(newLottieProps.sourceDotLottieURI)];
-    }
-
-    if(oldLottieProps.sourceName != newLottieProps.sourceName) {
-        [_view setSourceName:RCTNSStringFromString(newLottieProps.sourceName)];
-    }
-
-    if(oldLottieProps.sourceURL != newLottieProps.sourceURL) {
-        [_view setSourceURL:RCTNSStringFromString(newLottieProps.sourceURL)];
-    }
     
     if(oldLottieProps.colorFilters != newLottieProps.colorFilters) {
         [_view setColorFilters:convertColorFilters(newLottieProps.colorFilters)];

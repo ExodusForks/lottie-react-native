@@ -15,10 +15,7 @@ import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setLoop
 import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setProgress
 import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setRenderMode
 import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setResizeMode
-import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setSourceDotLottieURI
 import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setSourceJson
-import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setSourceName
-import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setSourceURL
 import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setSpeed
 import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setTextFilters
 import com.airbnb.lottie.LottieAnimationView
@@ -101,19 +98,9 @@ class LottieAnimationViewManager : SimpleViewManager<LottieAnimationView>() {
         }
     }
 
-    @ReactProp(name = "sourceName")
-    fun setSourceName(view: LottieAnimationView, name: String?) {
-        setSourceName(name, getOrCreatePropertyManager(view))
-    }
-
     @ReactProp(name = "sourceJson")
     fun setSourceJson(view: LottieAnimationView, json: String?) {
         setSourceJson(json, getOrCreatePropertyManager(view))
-    }
-
-    @ReactProp(name = "sourceURL")
-    fun setSourceURL(view: LottieAnimationView, urlString: String?) {
-        setSourceURL(urlString, getOrCreatePropertyManager(view))
     }
 
     @ReactProp(name = "cacheComposition")
@@ -182,11 +169,6 @@ class LottieAnimationViewManager : SimpleViewManager<LottieAnimationView>() {
     @ReactProp(name = "textFiltersAndroid")
     fun setTextFilters(view: LottieAnimationView, textFilters: ReadableArray?) {
         setTextFilters(textFilters, getOrCreatePropertyManager(view))
-    }
-
-    @ReactProp(name = "sourceDotLottieURI")
-    fun setSourceDotLottie(view: LottieAnimationView, uri: String?) {
-        setSourceDotLottieURI(uri, getOrCreatePropertyManager(view))
     }
 
     override fun onAfterUpdateTransaction(view: LottieAnimationView) {

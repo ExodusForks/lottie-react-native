@@ -161,47 +161,11 @@ internal object LottieAnimationViewManagerImpl {
     }
 
     @JvmStatic
-    fun setSourceName(
-        name: String?,
-        viewManager: LottieAnimationViewPropertyManager
-    ) {
-        // To match the behaviour on iOS we expect the source name to be
-        // extensionless. This means "myAnimation" corresponds to a file
-        // named `myAnimation.json` in `main/assets`. To maintain backwards
-        // compatibility we only add the .json extension if no extension is
-        // passed.
-        var resultSourceName = name
-        if (resultSourceName?.contains(".") == false) {
-            resultSourceName = "$resultSourceName.json"
-        }
-        viewManager.animationName = resultSourceName
-        viewManager.commitChanges()
-    }
-
-    @JvmStatic
     fun setSourceJson(
         json: String?,
         viewManager: LottieAnimationViewPropertyManager
     ) {
         viewManager.animationJson = json
-        viewManager.commitChanges()
-    }
-
-    @JvmStatic
-    fun setSourceURL(
-        urlString: String?,
-        viewManager: LottieAnimationViewPropertyManager
-    ) {
-        viewManager.animationURL = urlString
-        viewManager.commitChanges()
-    }
-
-    @JvmStatic
-    fun setSourceDotLottieURI(
-        uri: String?,
-        viewManager: LottieAnimationViewPropertyManager
-    ) {
-        viewManager.sourceDotLottie = uri
         viewManager.commitChanges()
     }
 

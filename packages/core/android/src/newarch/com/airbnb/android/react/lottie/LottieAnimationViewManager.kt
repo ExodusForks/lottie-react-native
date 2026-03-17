@@ -11,12 +11,9 @@ import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setProgres
 import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setRenderMode
 import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setResizeMode
 import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setSourceJson
-import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setSourceName
-import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setSourceURL
 import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setSpeed
 import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setTextFilters
 import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setAutoPlay
-import com.airbnb.android.react.lottie.LottieAnimationViewManagerImpl.setSourceDotLottieURI
 import com.airbnb.lottie.LottieAnimationView
 import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.bridge.ReadableMap
@@ -123,24 +120,9 @@ class LottieAnimationViewManager :
         LottieAnimationViewManagerImpl.resume(view)
     }
 
-    @ReactProp(name = "sourceName")
-    override fun setSourceName(view: LottieAnimationView, name: String?) {
-        setSourceName(name, getOrCreatePropertyManager(view))
-    }
-
     @ReactProp(name = "sourceJson")
     override fun setSourceJson(view: LottieAnimationView, json: String?) {
         setSourceJson(json, getOrCreatePropertyManager(view))
-    }
-
-    @ReactProp(name = "sourceURL")
-    override fun setSourceURL(view: LottieAnimationView, urlString: String?) {
-        setSourceURL(urlString, getOrCreatePropertyManager(view))
-    }
-    
-    @ReactProp(name = "sourceDotLottieURI")
-    override fun setSourceDotLottieURI(view: LottieAnimationView, urlString: String?) {
-        setSourceDotLottieURI(urlString, getOrCreatePropertyManager(view))
     }
 
     @ReactProp(name = "cacheComposition")

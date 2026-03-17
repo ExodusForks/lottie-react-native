@@ -159,52 +159,6 @@ class ContainerView: RCTView {
         }
     }
 
-    @objc func setSourceDotLottieURI(_ uri: String) {
-        if checkReactSourceString(uri) {
-            return
-        }
-
-        guard let url = URL(string: uri) else {
-            return
-        }
-
-        // Immediately clear the previous animation view so the region is blank while loading
-        removeCurrentAnimationView()
-
-        _ = LottieAnimationView(
-            dotLottieUrl: url,
-            configuration: lottieConfiguration,
-            completion: { [weak self] view, error in
-                guard let self = self else { return }
-                if let error = error {
-                    self.failureCallback(error.localizedDescription)
-                    return
-                }
-                self.replaceAnimationView(next: view)
-            }
-        )
-    }
-
-    @objc func setSourceURL(_ newSourceURLString: String) {
-        if checkReactSourceString(newSourceURLString) {
-            return
-        }
-
-        var url = URL(string: newSourceURLString)
-
-        if url?.scheme == nil {
-            // interpret raw URL paths as relative to the resource bundle
-            url = URL(fileURLWithPath: newSourceURLString, relativeTo: Bundle.main.resourceURL)
-        }
-
-        guard let url = url else { return }
-
-        // Immediately clear the previous animation view so the region is blank while loading
-        removeCurrentAnimationView()
-
-        self.fetchRemoteAnimation(from: url)
-    }
-
     @objc func setSourceJson(_ newSourceJson: String) {
         if checkReactSourceString(newSourceJson) {
             return
@@ -218,19 +172,6 @@ class ContainerView: RCTView {
 
         let nextAnimationView = LottieAnimationView(
             animation: animation,
-            configuration: lottieConfiguration
-        )
-
-        replaceAnimationView(next: nextAnimationView)
-    }
-
-    @objc func setSourceName(_ newSourceName: String) {
-        if checkReactSourceString(newSourceName) {
-            return
-        }
-
-        let nextAnimationView = LottieAnimationView(
-            name: newSourceName,
             configuration: lottieConfiguration
         )
 
@@ -360,36 +301,4 @@ class ContainerView: RCTView {
         return sourceStr.isEmpty
     }
 
-    private func fetchRemoteAnimation(from url: URL) {
-        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let self = self else { return }
-
-            if let error = error {
-                self.failureCallback("Unable to fetch the Lottie animation from the URL: \(error.localizedDescription)")
-                return
-            }
-
-            guard let data = data else {
-                self.failureCallback("No data received for the Lottie animation from the URL.")
-                return
-            }
-
-            do {
-                let animation = try JSONDecoder().decode(LottieAnimation.self, from: data)
-
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
-
-                    let nextAnimationView = LottieAnimationView(
-                        animation: animation,
-                        configuration: self.lottieConfiguration
-                    )
-
-                    self.replaceAnimationView(next: nextAnimationView)
-                }
-            } catch {
-                self.failureCallback("Unable to decode the Lottie animation object from the fetched URL source: \(error.localizedDescription)")
-            }
-        }.resume()
-    }
 }
